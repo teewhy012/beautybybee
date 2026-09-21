@@ -171,8 +171,8 @@ export default function Home() {
           <div className="order-2 lg:order-1">
             <div className="arch-image overflow-hidden border border-espresso/10 shadow-lg">
               <Image
-                src="/images/home-ritual.jpg"
-                alt="The Beauty by Bee ritual — honey jar and petals"
+                src="/images/facecard.jpg"
+                alt="Beauty by Bee studio imagery"
                 width={800}
                 height={1000}
                 className="w-full object-cover"
