@@ -22,7 +22,7 @@ export function GalleryGrid() {
             className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
               active === category
                 ? "bg-espresso text-cream"
-                : "border border-espresso/15 bg-white/60 text-cocoa hover:border-espresso/30"
+                : "border border-espresso/15 bg-bone/70 text-cocoa hover:border-espresso/30"
             }`}
           >
             {category}
@@ -34,7 +34,7 @@ export function GalleryGrid() {
         {visible.map((item) => (
           <figure
             key={item.slug}
-            className={`group relative overflow-hidden rounded-3xl border border-espresso/10 ${
+            className={`group relative overflow-hidden rounded-full border border-espresso/10 ${
               item.tall ? "row-span-2" : ""
             }`}
           >

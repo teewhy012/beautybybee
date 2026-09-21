@@ -29,27 +29,29 @@ function Stars({ rating }: { rating: number }) {
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-3xl border border-espresso/10 bg-white/70 transition-shadow hover:shadow-lg">
+    <div className="group relative flex flex-col overflow-hidden rounded-[2rem] rounded-t-[10rem] border border-espresso/10 bg-bone/70 transition-all hover:-translate-y-0.5 hover:shadow-lg">
       <Link
         href={`/shop/${product.slug}`}
-        className="relative block overflow-hidden"
+        className="relative block pt-[3rem]"
       >
-        <Image
-          src={product.image}
-          alt={product.name}
-          width={800}
-          height={1000}
-          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 100vw"
-          className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        <div className="overflow-hidden rounded-t-[10rem] px-2">
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={800}
+            height={1000}
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 100vw"
+            className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
         {product.badge && (
-          <span className="absolute left-3 top-3 rounded-full bg-espresso/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cream">
+          <span className="absolute left-6 top-6 rounded-full bg-espresso/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cream">
             {product.badge}
           </span>
         )}
       </Link>
-      <div className="flex flex-1 flex-col gap-2 p-4">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-honey">
+      <div className="flex flex-1 flex-col gap-2 p-5">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-cocoa">
           {product.category}
         </p>
         <Link

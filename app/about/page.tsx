@@ -54,7 +54,7 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="overflow-hidden rounded-[2.5rem] rounded-tl-[8rem] border border-espresso/10 bg-white/60 shadow-lg">
+          <div className="arch-image overflow-hidden border border-espresso/10 shadow-lg">
             <Image
               src="/images/about-studio.jpg"
               alt="Inside the Beauty by Bee studio"
@@ -96,7 +96,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white/50 py-16 lg:py-24">
+      <section className="bg-parchment py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The journey"

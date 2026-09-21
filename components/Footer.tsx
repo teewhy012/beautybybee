@@ -23,33 +23,33 @@ const serviceLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-espresso/10 bg-parchment">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
-        <div className="lg:col-span-2">
-          <div className="flex items-center gap-2.5">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <div className="lg:col-span-5">
+          <div className="flex items-center gap-3">
             <Image
               src="/images/bee-mark.svg"
               alt=""
-              width={36}
-              height={36}
-              className="h-9 w-9"
+              width={40}
+              height={40}
+              className="h-10 w-10"
               aria-hidden="true"
             />
-            <span className="font-serif text-lg font-semibold tracking-tight">
+            <span className="font-serif text-2xl font-semibold tracking-tight">
               {site.name}
             </span>
           </div>
-          <p className="mt-4 max-w-sm text-sm leading-6 text-cocoa">
+          <p className="editorial-text mt-5 max-w-sm text-base text-cocoa">
             A boutique beauty brand and studio crafting clean, cruelty-free
             skincare, makeup and body care — plus little rituals that make every
             day feel a bit golden.
           </p>
-          <div className="mt-5 flex gap-3">
+          <div className="mt-6 flex gap-3">
             <a
               href={site.socials.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-espresso/10 bg-white/70 text-cocoa transition-colors hover:text-espresso"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-espresso/15 text-cocoa transition-colors hover:bg-espresso hover:text-cream"
             >
               <InstagramIcon />
             </a>
@@ -58,7 +58,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-espresso/10 bg-white/70 text-cocoa transition-colors hover:text-espresso"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-espresso/15 text-cocoa transition-colors hover:bg-espresso hover:text-cream"
             >
               <FacebookIcon />
             </a>
@@ -67,23 +67,23 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-espresso/10 bg-white/70 text-cocoa transition-colors hover:text-espresso"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-espresso/15 text-cocoa transition-colors hover:bg-espresso hover:text-cream"
             >
               <TikTokIcon />
             </a>
           </div>
         </div>
 
-        <div>
-          <h3 className="font-serif text-sm font-semibold uppercase tracking-widest text-espresso">
+        <div className="lg:col-span-2">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">
             Explore
           </h3>
-          <ul className="mt-4 space-y-2.5">
+          <ul className="mt-5 space-y-3">
             {exploreLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-cocoa transition-colors hover:text-espresso"
+                  className="text-sm text-espresso/80 transition-colors hover:text-espresso"
                 >
                   {link.label}
                 </Link>
@@ -92,36 +92,51 @@ export function Footer() {
           </ul>
         </div>
 
-        <div>
-          <h3 className="font-serif text-sm font-semibold uppercase tracking-widest text-espresso">
-            Studio
+        <div className="lg:col-span-2">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">
+            The Studio
           </h3>
-          <ul className="mt-4 space-y-2.5">
-            <li className="text-sm text-cocoa">
-              {site.addressLines.join(", ")}
+          <ul className="mt-5 space-y-3 text-sm text-espresso/80">
+            <li>{site.addressLines.join(", ")}</li>
+            <li>
+              <a
+                href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
+                className="transition-colors hover:text-espresso"
+              >
+                {site.phone}
+              </a>
             </li>
-            <li className="text-sm text-cocoa">{site.phone}</li>
-            <li className="text-sm text-cocoa">{site.email}</li>
+            <li>
+              <a
+                href={`mailto:${site.email}`}
+                className="transition-colors hover:text-espresso"
+              >
+                {site.email}
+              </a>
+            </li>
           </ul>
-          <h3 className="mt-6 font-serif text-sm font-semibold uppercase tracking-widest text-espresso">
+        </div>
+
+        <div className="lg:col-span-3">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">
             Hours
           </h3>
-          <ul className="mt-3 space-y-1.5">
+          <ul className="mt-5 space-y-3">
             {site.hours.map((period) => (
-              <li key={period.day} className="text-sm text-cocoa">
-                <span className="font-medium text-espresso">{period.day}:</span>{" "}
-                {period.time}
+              <li key={period.day} className="flex items-baseline justify-between gap-3 text-sm">
+                <span className="text-espresso/80">{period.day}</span>
+                <span className="text-cocoa">{period.time}</span>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="border-t border-espresso/10 py-5">
+      <div className="border-t border-espresso/10 py-6">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 text-xs text-cocoa sm:flex-row sm:px-6 lg:px-8">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p className="flex flex-wrap gap-x-4 justify-center">
+          <p className="flex flex-wrap justify-center gap-x-4">
             {serviceLinks.map((name) => (
               <span key={name} className="opacity-80">
                 {name}

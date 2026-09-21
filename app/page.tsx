@@ -14,7 +14,7 @@ import { site } from "@/lib/site";
 const values = [
   {
     title: "Cleanly Formulated",
-    text: "No parabens, sulfates or synthetic dyes â€” ever.",
+    text: "No parabens, sulfates or synthetic dyes — ever.",
   },
   {
     title: "Kind to Every Skin",
@@ -32,16 +32,19 @@ const values = [
 
 const editorial = [
   {
+    index: "01",
     href: "/about",
     label: "Our story",
     text: "How a tiny studio became a little community.",
   },
   {
+    index: "02",
     href: "/services",
     label: "The studio",
     text: "Facials, makeup and rituals, appointment only.",
   },
   {
+    index: "03",
     href: "/gallery",
     label: "The work",
     text: "Golden-hour looks and serendipity from the chair.",
@@ -76,79 +79,82 @@ export default function Home() {
 
   return (
     <>
-      {/* â€”â€”â€” Hero â€”â€”â€” */}
-      <section className="relative overflow-hidden bg-blush/30">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8 lg:py-20">
-          <div className="lg:col-span-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-honey">
+      {/* ——— Hero ——— */}
+      <section className="relative overflow-hidden">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8 lg:pb-24 lg:pt-20">
+          <div className="lg:col-span-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cocoa">
               {site.tagline}
             </p>
-            <h1 className="mt-5 font-serif text-4xl font-medium leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 font-serif text-4xl font-medium leading-[1.08] sm:text-5xl lg:text-6xl">
               Beauty that&rsquo;s
               <br />
-              as <span className="italic text-honey">natural</span> as it
+              as <span className="italic">natural</span> as it
               <br />
-              is glowy.
+              is <span className="italic">glowy</span>.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-7 text-cocoa sm:text-lg">
-              Clean, cruelty-free skincare, makeup and body care â€” crafted with
+            <p className="editorial-text mt-6 max-w-xl text-lg text-cocoa">
+              Clean, cruelty-free skincare, makeup and body care — crafted with
               raw honey and little rituals that make every day feel golden.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-9 flex flex-wrap gap-4">
               <Link
-                href="/shop"
-                className="inline-flex items-center gap-2 rounded-full bg-espresso px-7 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-honey"
+                href="/book"
+                className="inline-flex items-center gap-2 rounded-full bg-espresso px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.15em] text-cream transition-colors hover:bg-honey"
               >
-                Shop the collection
+                Book a session
                 <ArrowIcon />
               </Link>
               <Link
-                href="/services"
-                className="inline-flex items-center gap-2 rounded-full border border-espresso/20 bg-white/60 px-7 py-3.5 text-sm font-medium transition-colors hover:border-espresso/40 hover:bg-white"
+                href="/shop"
+                className="inline-flex items-center gap-2 rounded-full border border-espresso/25 px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.15em] transition-colors hover:border-espresso/50 hover:bg-bone"
               >
-                Book a service
+                Shop the collection
               </Link>
             </div>
             <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-espresso/10 pt-8">
               {[
                 ["12k+", "Happy clients"],
                 ["40+", "Clean formulas"],
-                ["4.9â˜…", "Average rating"],
+                ["4.9★", "Average rating"],
               ].map(([value, label]) => (
                 <div key={label}>
                   <dt className="sr-only">{label}</dt>
-                  <dd className="font-serif text-2xl font-semibold">
-                    {value}
-                  </dd>
-                  <dd className="mt-1 text-xs uppercase tracking-wider text-cocoa">
+                  <dd className="font-serif text-2xl font-medium">{value}</dd>
+                  <dd className="mt-1 text-[11px] uppercase tracking-wider text-cocoa">
                     {label}
                   </dd>
                 </div>
               ))}
             </dl>
           </div>
-          <div className="relative h-72 overflow-hidden rounded-[2.5rem] rounded-tr-[8rem] border border-espresso/10 bg-white/60 shadow-xl sm:h-96 lg:col-span-8 lg:h-auto lg:min-h-[calc(100vh-9rem)]">
-            <Image
-              src="/images/micro.jpg"
-              alt="Brow microblading being performed at the Beauty by Bee studio"
-              fill
-              priority
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
+          <div className="lg:col-span-7">
+            <div className="arch-image relative h-72 overflow-hidden border border-espresso/10 shadow-xl sm:h-96 lg:h-[30rem]">
+              <Image
+                src="/images/micro.jpg"
+                alt="Brow microblading being performed at the Beauty by Bee studio"
+                fill
+                priority
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* â€”â€”â€” Values strip â€”â€”â€” */}
+      {/* ——— Values strip ——— */}
       <section className="border-y border-espresso/10 bg-parchment">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-10 sm:px-6 lg:grid-cols-4 lg:px-8">
-          {values.map((value) => (
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
+          {values.map((value, i) => (
             <div key={value.title}>
-              <h3 className="font-serif text-base font-semibold">
+              <p className="font-serif text-sm italic text-cocoa">
+                {String(i + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-2 font-serif text-base font-medium">
                 {value.title}
               </h3>
-              <p className="mt-1.5 text-sm leading-6 text-cocoa">
+              <p className="editorial-text mt-2 text-sm text-cocoa">
                 {value.text}
               </p>
             </div>
@@ -156,16 +162,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â€”â€”â€” What we're about / editorial â€”â€”â€” */}
+      {/* ——— The story / editorial ——— */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div className="order-2 lg:order-1">
-            <div className="overflow-hidden rounded-[2.5rem] rounded-br-[8rem] border border-espresso/10 bg-white/60 shadow-lg">
+            <div className="arch-image overflow-hidden border border-espresso/10 shadow-lg">
               <Image
                 src="/images/home-ritual.jpg"
-                alt="The Beauty by Bee ritual â€” honey jar and petals"
+                alt="The Beauty by Bee ritual — honey jar and petals"
                 width={800}
-                height={900}
+                height={1000}
                 className="w-full object-cover"
               />
             </div>
@@ -176,28 +182,35 @@ export default function Home() {
               eyebrow="Welcome to the hive"
               title="A beauty brand built like a love letter to your skin"
             />
-            <p className="mt-6 text-base leading-7 text-cocoa">
+            <p className="editorial-text mt-6 text-lg text-cocoa">
               We started Beauty by Bee in a tiny corner studio with two brushes,
               a dangerously good facial recipe, and a single belief: skincare
               should feel like self-care, not maintenance. Today our clean
               formulations are made in small batches and our facials are booked
-              out weeks ahead â€” but nothing here is mass-produced, and nothing
+              out weeks ahead — but nothing here is mass-produced, and nothing
               leaves the studio without a love note printed on the box.
             </p>
-            <ul className="mt-8 space-y-5">
+            <ul className="mt-10 space-y-4">
               {editorial.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="group flex items-start justify-between gap-4 rounded-2xl border border-espresso/10 bg-white/60 p-5 transition-colors hover:border-honey/50"
+                    className="group flex items-start justify-between gap-6 border-b border-espresso/10 pb-4 transition-colors hover:border-espresso/40"
                   >
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-honey">
-                        {item.label}
-                      </p>
-                      <p className="mt-1 text-sm text-cocoa">{item.text}</p>
+                    <div className="flex items-baseline gap-5">
+                      <span className="font-serif text-sm italic text-cocoa">
+                        {item.index}
+                      </span>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em]">
+                          {item.label}
+                        </p>
+                        <p className="editorial-text mt-1 text-sm text-cocoa">
+                          {item.text}
+                        </p>
+                      </div>
                     </div>
-                    <ArrowIcon className="mt-1 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <ArrowIcon className="mt-1 h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </li>
               ))}
@@ -206,8 +219,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â€”â€”â€” Featured products â€”â€”â€” */}
-      <section className="bg-white/50 py-20 lg:py-28">
+      {/* ——— Featured products ——— */}
+      <section className="border-y border-espresso/10 bg-parchment py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
@@ -217,13 +230,13 @@ export default function Home() {
             />
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 rounded-full border border-espresso/20 px-6 py-3 text-sm font-medium transition-colors hover:border-espresso/40"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-cocoa transition-colors hover:text-espresso"
             >
               View all products
               <ArrowIcon />
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featured.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}
@@ -231,7 +244,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â€”â€”â€” Services preview â€”â€”â€” */}
+      {/* ——— Services preview ——— */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading
@@ -241,42 +254,42 @@ export default function Home() {
           />
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 rounded-full border border-espresso/20 px-6 py-3 text-sm font-medium transition-colors hover:border-espresso/40"
+            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-cocoa transition-colors hover:text-espresso"
           >
             All services
             <ArrowIcon />
           </Link>
         </div>
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {previewServices.map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}
         </div>
       </section>
 
-      {/* â€”â€”â€” Gallery preview â€”â€”â€” */}
-      <section className="bg-white/50 py-20 lg:py-28">
+      {/* ——— Gallery preview ——— */}
+      <section className="border-y border-espresso/10 bg-parchment py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeading
               align="left"
-              eyebrow="The gallery"
+              eyebrow="Visual harmonies"
               title="Little moments of glow"
             />
             <Link
               href="/gallery"
-              className="inline-flex items-center gap-2 rounded-full border border-espresso/20 px-6 py-3 text-sm font-medium transition-colors hover:border-espresso/40"
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-cocoa transition-colors hover:text-espresso"
             >
               Full gallery
               <ArrowIcon />
             </Link>
           </div>
-          <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-5">
+          <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-5">
             {previewGallery.map((item) => (
               <Link
                 key={item.slug}
                 href="/gallery"
-                className={`group overflow-hidden rounded-3xl border border-espresso/10 bg-white/60 ${
+                className={`group overflow-hidden rounded-full border border-espresso/10 bg-bone ${
                   item.tall ? "row-span-2" : ""
                 }`}
               >
@@ -294,41 +307,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* â€”â€”â€” Testimonials â€”â€”â€” */}
+      {/* ——— Testimonials ——— */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <SectionHeading
-          eyebrow="Kind words"
-          title="What our community says"
-        />
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <SectionHeading eyebrow="Kind words" title="What our community says" />
+        <div className="mt-14 grid gap-8 lg:grid-cols-3">
           {testimonials.map((t) => (
-            <figure
-              key={t.name}
-              className="flex flex-col rounded-3xl border border-espresso/10 bg-white/60 p-7"
-            >
-              <div className="text-honey" aria-label="5 out of 5">
-                â˜…â˜…â˜…â˜…â˜…
+            <figure key={t.name} className="border-t border-espresso/15 pt-7">
+              <div className="text-[13px] tracking-[0.2em] text-honey" aria-label="5 out of 5">
+                ★★★★★
               </div>
-              <blockquote className="mt-4 flex-1 font-serif text-lg leading-relaxed">
+              <blockquote className="editorial-text mt-5 font-serif text-xl leading-relaxed">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
-              <figcaption className="mt-6 border-t border-espresso/10 pt-4">
-                <p className="font-medium">{t.name}</p>
-                <p className="text-sm text-cocoa">{t.detail}</p>
+              <figcaption className="mt-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em]">
+                  {t.name}
+                </p>
+                <p className="mt-1 text-sm text-cocoa">{t.detail}</p>
               </figcaption>
             </figure>
           ))}
         </div>
       </section>
 
-      {/* â€”â€”â€” CTA banner â€”â€”â€” */}
+      {/* ——— CTA banner ——— */}
       <section className="px-4 pb-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-linear-to-br from-honey via-amber to-honey px-6 py-16 text-center sm:px-16">
-          <h2 className="font-serif text-3xl font-medium leading-tight text-espresso sm:text-4xl">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] bg-espresso px-6 py-16 text-center text-cream sm:px-16">
+          <h2 className="font-serif text-3xl font-medium leading-tight sm:text-4xl">
             Join the hive.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-espresso/80 sm:text-base">
-            Sign up for our little letters â€” new formula drops, salon
+          <p className="editorial-text mx-auto mt-4 max-w-xl text-base text-cream/80">
+            Sign up for our little letters — new formula drops, salon
             availability and one honest skincare tip a month. No spam, ever.
           </p>
           <NewsletterForm />

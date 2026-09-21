@@ -12,7 +12,7 @@ export default function CancelPage() {
       <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blush text-2xl text-rose">
         ×
       </div>
-      <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-honey">
+      <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">
         No worries at all
       </p>
       <h1 className="mt-3 font-serif text-4xl font-medium tracking-tight">

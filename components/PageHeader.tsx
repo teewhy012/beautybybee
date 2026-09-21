@@ -11,7 +11,7 @@ export function PageHeader({
     <section className="border-b border-espresso/10 bg-linear-to-b from-blush/60 to-cream">
       <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
         {eyebrow && (
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-honey">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">
             {eyebrow}
           </p>
         )}

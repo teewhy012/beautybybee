@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
   { href: "/gallery", label: "Gallery" },
   { href: "/shop", label: "Shop" },
@@ -21,11 +21,11 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-espresso/10 bg-cream/90 backdrop-blur">
+    <header className="sticky top-0 z-40 glass border-b border-espresso/5">
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2"
+          className="flex min-w-0 items-center gap-2.5"
           onClick={() => setMenuOpen(false)}
         >
           <Image
@@ -41,35 +41,47 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium tracking-wide text-cocoa transition-colors hover:text-espresso"
+              className="text-xs font-medium uppercase tracking-[0.18em] text-cocoa transition-colors hover:text-espresso"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <a
+            href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
+            className="hidden text-sm font-medium tracking-wide text-cocoa transition-colors hover:text-espresso xl:inline"
+          >
+            {site.phone}
+          </a>
+          <Link
+            href="/book"
+            className="hidden rounded-full bg-espresso px-6 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-cream transition-colors hover:bg-honey md:inline-flex"
+          >
+            Book Session
+          </Link>
           <button
             type="button"
             onClick={openCart}
-            className="relative flex h-11 w-11 items-center justify-center rounded-full border border-espresso/10 bg-white/70 text-espresso transition-colors hover:bg-white"
+            className="relative flex h-11 w-11 items-center justify-center rounded-full border border-espresso/10 bg-bone/70 text-espresso transition-colors hover:bg-bone"
             aria-label={`Open cart, ${count} items`}
           >
             <CartIcon />
             {count > 0 && (
-              <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-honey px-1 text-[11px] font-semibold text-white">
+              <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-espresso px-1 text-[11px] font-semibold text-cream">
                 {count}
               </span>
             )}
           </button>
           <button
             type="button"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-espresso/10 bg-white/70 text-espresso transition-colors hover:bg-white md:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-espresso/10 bg-bone/70 text-espresso transition-colors hover:bg-bone lg:hidden"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
@@ -80,7 +92,7 @@ export function Header() {
       </div>
 
       {menuOpen && (
-        <nav className="border-t border-espresso/10 bg-cream px-4 pb-4 pt-2 md:hidden">
+        <nav className="border-t border-espresso/5 px-4 pb-4 pt-2 lg:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -91,6 +103,13 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/book"
+            onClick={() => setMenuOpen(false)}
+            className="mt-4 block rounded-full bg-espresso px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.15em] text-cream transition-colors hover:bg-honey"
+          >
+            Book Session
+          </Link>
         </nav>
       )}
     </header>

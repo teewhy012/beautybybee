@@ -67,7 +67,7 @@ export default async function ProductPage({
         </nav>
 
         <div className="mt-8 grid gap-12 lg:grid-cols-2">
-          <div className="overflow-hidden rounded-[2.5rem] border border-espresso/10 bg-white/60 shadow-lg">
+          <div className="arch-image overflow-hidden border border-espresso/10 shadow-lg">
             <Image
               src={product.image}
               alt={product.name}
@@ -128,7 +128,7 @@ export default async function ProductPage({
       </section>
 
       {related.length > 0 && (
-        <section className="bg-white/50 py-16 lg:py-20">
+        <section className="bg-parchment py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               align="left"

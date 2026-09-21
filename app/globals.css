@@ -1,23 +1,79 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #2b211b;
+  --background: #e5e1da;
+  --foreground: #2d2a26;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
 
-  --color-cream: #ffffff;
-  --color-parchment: #f5ede1;
-  --color-blossom: #ecddcd;
-  --color-blush: #f3e3da;
-  --color-rose: #d98e86;
-  --color-honey: #c99a2e;
-  --color-amber: #e8b64c;
-  --color-espresso: #2b211b;
-  --color-cocoa: #6a5546;
+  --color-cream: #e5e1da;
+  --color-bone: #f4f0ea;
+  --color-parchment: #ece7de;
+  --color-blossom: #ddd6ca;
+  --color-blush: #ece6de;
+  --color-rose: #b0766b;
+  --color-honey: #a9854f;
+  --color-amber: #c2a067;
+  --color-espresso: #2d2a26;
+  --color-cocoa: #6d6559;
+  --color-sand: #cec5b8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.font-serif {
+  font-family: var(--font-playfair), Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.editorial-text {
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.glass {
+  background: rgba(229, 225, 218, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.arch-image {
+  border-radius: 999px 999px 0 0;
+}
+
+.pill-image {
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #e5e1da;
+}
+::-webkit-scrollbar-thumb {
+  background: #cec5b8;
+  border-radius: 10px;
+}
+::selection {
+  background: #d6ccbd;
+  color: #2d2a26;
 }

@@ -17,7 +17,7 @@ export default async function SuccessPage({
       <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-honey text-3xl text-white">
         ✓
       </div>
-      <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-honey">
+      <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">
         We love a delivered glow
       </p>
       <h1 className="mt-3 font-serif text-4xl font-medium tracking-tight">
