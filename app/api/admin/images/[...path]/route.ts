@@ -1,7 +1,7 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-import { EXT_TO_MIME, readUploadedImage } from "@/lib/admin-images";
+import { EXT_TO_MIME, getImageUrl, readUploadedImage } from "@/lib/admin-images";
 
 export const runtime = "nodejs";
 
@@ -16,6 +16,12 @@ export async function GET(
   }
 
   const [folder, name] = path;
+
+  const blobUrl = await getImageUrl(folder, name);
+  if (blobUrl) {
+    return NextResponse.redirect(blobUrl, 307);
+  }
+
   const image = await readUploadedImage(folder, name);
 
   if (!image) {
