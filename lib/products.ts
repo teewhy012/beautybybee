@@ -147,5 +147,5 @@ export function getProductBySlug(slug: string): Product | undefined {
 }
 
 export function getFeaturedProducts(limit = 4): Product[] {
-  return products.filter((p) => p.badge === "Bestseller").slice(0, limit);
+  return products.slice(0, limit);
 }
