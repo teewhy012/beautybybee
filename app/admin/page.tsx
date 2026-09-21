@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { AdminImageLibrary } from "@/components/AdminImageLibrary";
 import { PageHeader } from "@/components/PageHeader";
 import { site } from "@/lib/site";
 
@@ -40,6 +41,7 @@ export default function AdminPage() {
   const [form, setForm] = useState(emptyProduct);
   const [priceSlug, setPriceSlug] = useState("");
   const [priceCents, setPriceCents] = useState("");
+  const [tab, setTab] = useState<"products" | "images">("products");
 
   async function verifyPassword(event: React.FormEvent) {
     event.preventDefault();
@@ -188,11 +190,35 @@ export default function AdminPage() {
     <>
       <PageHeader
         eyebrow="Studio admin"
-        title="Manage the shop"
-        description="Add new products to the shop or update prices. Changes appear on the shop page straight away."
+        title="Manage the site"
+        description="Adding products, updating prices and uploading images. Changes appear on the site straight away."
       />
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        {message && (
+        <div className="flex flex-wrap justify-center gap-2">
+          {(
+            [
+              { value: "products", label: "Products" },
+              { value: "images", label: "Images" },
+            ] as const
+          ).map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => setTab(option.value)}
+              className={`rounded-full px-6 py-2.5 text-sm font-medium transition-colors ${
+                tab === option.value
+                  ? "bg-espresso text-cream"
+                  : "border border-espresso/15 bg-white/70 text-cocoa hover:border-espresso/30"
+              }`}
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
+
+        {tab === "products" ? (
+          <>
+            {message && (
           <p
             className={
               isError
@@ -313,6 +339,10 @@ export default function AdminPage() {
             </form>
           </div>
         </div>
+          </>
+        ) : (
+          <AdminImageLibrary password={password.trim()} />
+        )}
       </section>
     </>
   );

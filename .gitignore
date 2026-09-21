@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# admin runtime data (uploaded images, product overrides)
+/data
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
