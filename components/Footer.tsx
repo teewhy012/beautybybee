@@ -98,14 +98,13 @@ export function Footer() {
           </h3>
           <ul className="mt-5 space-y-3 text-sm text-espresso/80">
             <li>{site.addressLines.join(", ")}</li>
-            <li>
-              <a
-                href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
-                className="transition-colors hover:text-espresso"
-              >
-                {site.phone}
-              </a>
-            </li>
+            {site.phones.map((phone) => (
+              <li key={phone}>
+                <a href={`tel:${phone}`} className="transition-colors hover:text-espresso">
+                  {phone}
+                </a>
+              </li>
+            ))}
             <li>
               <a
                 href={`mailto:${site.email}`}

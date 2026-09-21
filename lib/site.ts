@@ -4,7 +4,7 @@ export const site = {
   tagline: "Naturally beautiful, lovingly made",
   description:
     "Beauty by Bee is a boutique beauty brand and studio offering clean, cruelty-free skincare, makeup and body care products alongside professional beauty services. Every formula is crafted to make you feel radiant, inside and out.",
-  phone: "+1 555-012-3456",
+  phones: ["08182169633", "07065799094"],
   email: "hello@beautybybee.com",
   addressLines: ["12 Linden Row, Mayfair", "London, W1K 6PP"],
   hours: [

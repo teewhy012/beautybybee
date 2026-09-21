@@ -72,12 +72,17 @@ export default function ServicesPage() {
           </ol>
           <p className="mt-10 text-center text-sm text-cocoa">
             To book, call the studio at{" "}
-            <a
-              href="tel:+15550123456"
-              className="font-medium text-espresso underline-offset-2 hover:underline"
-            >
-              {site.phone}
-            </a>{" "}
+            {site.phones.map((phone, i) => (
+              <span key={phone}>
+                {i > 0 && " or "}
+                <a
+                  href={`tel:${phone}`}
+                  className="font-medium text-espresso underline-offset-2 hover:underline"
+                >
+                  {phone}
+                </a>
+              </span>
+            ))}{" "}
             or email{" "}
             <a
               href={`mailto:${site.email}`}

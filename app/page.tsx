@@ -131,8 +131,8 @@ export default function Home() {
           <div className="lg:col-span-7">
             <div className="arch-image relative h-72 overflow-hidden border border-espresso/10 shadow-xl sm:h-96 lg:h-[30rem]">
               <Image
-                src="/images/micro.jpg"
-                alt="Brow microblading being performed at the Beauty by Bee studio"
+                src="/images/videoframe_3456.png"
+                alt="Inside the Beauty by Bee studio"
                 fill
                 priority
                 sizes="(min-width: 1024px) 50vw, 100vw"

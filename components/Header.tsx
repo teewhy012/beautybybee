@@ -54,12 +54,17 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}
-            className="hidden text-sm font-medium tracking-wide text-cocoa transition-colors hover:text-espresso xl:inline"
-          >
-            {site.phone}
-          </a>
+            <div className="hidden items-center gap-3 xl:flex">
+              {site.phones.map((phone) => (
+                <a
+                  key={phone}
+                  href={`tel:${phone}`}
+                  className="text-sm font-medium tracking-wide text-cocoa transition-colors hover:text-espresso"
+                >
+                  {phone}
+                </a>
+              ))}
+            </div>
           <Link
             href="/book"
             className="hidden rounded-full bg-espresso px-6 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-cream transition-colors hover:bg-honey md:inline-flex"
