@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #e5e1da;
+  --background: #f6f3ee;
   --foreground: #2d2a26;
 }
 
@@ -11,17 +11,17 @@
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), Georgia, serif;
 
-  --color-cream: #e5e1da;
-  --color-bone: #f4f0ea;
-  --color-parchment: #ece7de;
-  --color-blossom: #ddd6ca;
-  --color-blush: #ece6de;
+  --color-cream: #f6f3ee;
+  --color-bone: #fbf9f4;
+  --color-parchment: #f1ede6;
+  --color-blossom: #eae4d8;
+  --color-blush: #f4f0e9;
   --color-rose: #b0766b;
   --color-honey: #a9854f;
   --color-amber: #c2a067;
   --color-espresso: #2d2a26;
   --color-cocoa: #6d6559;
-  --color-sand: #cec5b8;
+  --color-sand: #dcd4c8;
 }
 
 html {
@@ -50,7 +50,7 @@ h5,
 }
 
 .glass {
-  background: rgba(229, 225, 218, 0.7);
+  background: rgba(246, 243, 238, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -67,13 +67,13 @@ h5,
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #e5e1da;
+  background: #f6f3ee;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cec5b8;
+  background: #dcd4c8;
   border-radius: 10px;
 }
 ::selection {
-  background: #d6ccbd;
+  background: #e8e0d2;
   color: #2d2a26;
 }
