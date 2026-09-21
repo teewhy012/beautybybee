@@ -130,16 +130,13 @@ export default function Home() {
           </div>
           <div className="lg:col-span-7">
             <div className="arch-image relative h-72 overflow-hidden border border-espresso/10 shadow-xl sm:h-96 lg:h-[30rem]">
-              <video
-                src="/images/videoframe-3456-fvfahx.mp4"
-                poster="/images/videoframe_3456.png"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                aria-label="Inside the Beauty by Bee studio"
-                className="h-full w-full object-cover"
+              <Image
+                src="/images/Homecard.jpg"
+                alt="Inside the Beauty by Bee studio"
+                fill
+                priority
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
               />
             </div>
           </div>
