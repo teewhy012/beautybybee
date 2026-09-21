@@ -22,17 +22,6 @@ export const services: Service[] = [
     icon: "facial",
   },
   {
-    slug: "bridal-event-makeup",
-    name: "Bridal & Event Makeup",
-    category: "Makeup",
-    duration: "90 min",
-    durationMin: 90,
-    price: "from ₦140",
-    description:
-      "Long-wear, luminous makeup created for your special day. Includes a trial session, lash application and touch-up kit for brides and bridal parties.",
-    icon: "makeup",
-  },
-  {
     slug: "lash-lift-tint",
     name: "Lash Lift & Tint",
     category: "Eyes",

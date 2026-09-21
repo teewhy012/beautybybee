@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Facials, bridal & event makeup, lash lifts, brow sculpting, manicures and more at the Beauty by Bee studio.",
+    "Facials, lash lifts, brow sculpting, manicures and more at the Beauty by Bee studio.",
 };
 
 const howItWorks = [

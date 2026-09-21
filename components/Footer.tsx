@@ -14,7 +14,6 @@ const exploreLinks = [
 
 const serviceLinks = [
   "Signature Glow Facial",
-  "Bridal & Event Makeup",
   "Lash Lift & Tint",
   "Brow Sculpting & Tint",
   "Luxury Manicure & Pedicure",
